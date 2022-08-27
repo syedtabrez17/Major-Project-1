@@ -1,8 +1,8 @@
 <h1>Sign Up</h1>
-<form action="/user/create" method="POST">
-    <input type="text" placeholder="Enter your name">
-    <input id="usename" type="text" placeholder="Enter Email" required>
-    <input id="password" type="password" placeholder="Password" required>
+<form action="/users/create" method="POST">
+    <input name="name" type="text" placeholder="Enter your name">
+    <input name="email" type="text" placeholder="Enter Email" required>
+    <input name="password" type="password" placeholder="Password" required>
     <input type="password" name="confirm_password" placeholder="Confirm Password">
     <button type="submit">Sign Up</button>
-</form>
+</form> 
