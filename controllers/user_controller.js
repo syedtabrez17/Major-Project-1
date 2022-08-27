@@ -10,14 +10,26 @@ module.exports.posts = function(req,res){
     });
 }
 
-module.exports.sign_in = function(req,res){
-    return res.render('sign_in',{
-        title : 'Sign in Page'
+// Render the sign in page
+module.exports.signIn = function(req,res){
+    return res.render('user_sign_in',{
+        title : 'Codeial | Sign In'
     })
 }
 
-module.exports.sign_up = function(req,res){
-    return res.render('sign_up',{
-        title : 'Sign Up Page'
+// Render the sign up page
+module.exports.signUp = function(req,res){
+    return res.render('user_sign_up',{
+        title : 'Codeial | Sign Up'
     })
+}
+
+// get the sign up data
+module.exports.create = function(req,res){
+
+}
+
+// get the sign in data
+module.exports.createSession = function(req,res){
+    
 }
