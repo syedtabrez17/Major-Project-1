@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({
                 console.log('Invalid Username/Password');
                 return done(null, false);
             }
-            return document(null, user);
+            return done(null, user);
         });
     }
 
