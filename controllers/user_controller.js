@@ -60,7 +60,18 @@ module.exports.create = function(req,res){
     });
 }
 
-// get the sign in data
+// sign in and create session for the user
 module.exports.createSession = function(req,res){
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req,res){
+    // console.log(req.logout);
+    req.logout(function(err){
+        if (err){
+            console.log('Error in logging out')
+        }
+    });
+    
     return res.redirect('/');
 }
