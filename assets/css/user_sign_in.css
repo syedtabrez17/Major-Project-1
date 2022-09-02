@@ -1,0 +1,42 @@
+main {
+  background-image: url("../images/sign_up_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding-bottom: 10%; }
+
+#sign-in-head {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 20px;
+  color: #292928; }
+
+#sign-in-form {
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  max-width: 400px;
+  margin: auto;
+  min-height: 55%;
+  padding: 30px 20px;
+  border-radius: 10px; }
+  #sign-in-form div input {
+    border-radius: 3px;
+    border: 1px solid gray;
+    border: none;
+    margin: 5px;
+    background-color: #d9e4ed;
+    height: 40px;
+    width: 100%; }
+  #sign-in-form div button {
+    margin-top: 20px;
+    background-color: #5315e3;
+    height: 50px;
+    width: 120px;
+    color: white;
+    font-size: x-large;
+    border: none;
+    border-radius: 5px; }

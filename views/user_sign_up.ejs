@@ -1,8 +1,33 @@
-<h1>Sign Up</h1>
-<form action="/users/create" method="POST">
-    <input name="name" type="text" placeholder="Enter your name">
-    <input name="email" type="text" placeholder="Enter Email" required>
-    <input name="password" type="password" placeholder="Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm Password">
-    <button type="submit">Sign Up</button>
+<link rel="stylesheet" href="/css/user_sign_up.css">
+
+<h1 id="sign-up-head">Create a new account</h1>
+<form action="/users/create" method="POST" id="sign-up-form">
+    <div>
+        <input name="name" type="text" placeholder="Enter your name">
+    </div>    
+    <div>    
+        <input name="email" type="text" placeholder="Enter Email" required>
+    </div>    
+    <div>    
+        <input name="password" type="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Confirm Password">
+    </div>    
+    <div>    
+        <label for="dobb">Date of Birth</label>
+        <input type="date" name="dob" id="dob" required>
+    </div>
+    <div>    
+        <div>
+            <span>Gender : &nbsp;</span>
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="male" value="Male" required>
+            <label for="male">Female</label>
+            <input type="radio" name="gender" id="female" value="Female" required>
+            <label for="male">Other</label>
+            <input type="radio" name="gender" id="other" value="Other" required>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
 </form> 

@@ -1,0 +1,49 @@
+main {
+  background-image: url("../images/sign_up_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding-bottom: 10%; }
+  main #sign-up-head {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20px;
+    color: #292928; }
+  main #sign-up-form {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    max-width: 400px;
+    margin: auto;
+    min-height: 55%;
+    padding: 30px 20px;
+    background-color: azure;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 5px azure; }
+    main #sign-up-form div input {
+      border-radius: 3px;
+      border: 1px solid gray;
+      border: none;
+      margin: 5px;
+      background-color: #bbd1e4;
+      height: 40px;
+      width: 100%; }
+    main #sign-up-form div button {
+      margin-top: 20px;
+      background-color: #4c770b;
+      height: 50px;
+      width: 120px;
+      color: white;
+      font-size: x-large;
+      border: none;
+      border-radius: 5px; }
+    main #sign-up-form div div {
+      margin-left: 5px;
+      display: flex;
+      align-items: center; }
+      main #sign-up-form div div input {
+        width: 5%;
+        margin: auto 10px; }

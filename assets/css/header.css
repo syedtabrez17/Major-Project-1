@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: #307bec;
+  justify-content: space-between;
+  align-items: center; }
+  header div {
+    color: white;
+    margin-left: 10px;
+    font-size: xx-large;
+    font-family: monospace; }
+  header #header-li {
+    list-style: none;
+    display: flex;
+    min-width: 18%;
+    justify-content: space-around; }
+    header #header-li li {
+      color: white;
+      width: 45%;
+      font-size: 18px; }
+      header #header-li li a {
+        color: white;
+        text-decoration: none; }

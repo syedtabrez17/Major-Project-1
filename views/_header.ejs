@@ -1,8 +1,8 @@
-<header>
-    Page Header
-    <ul>
+<header id="header">
+    <div>Codeial</div>
+    <ul id="header-li">
         <% if(locals.user) {%>
-            <li><%=user.name%></li>
+            <li><i class="fas fa-user"></i> <%=user.name%></li>
             <li>
                 <a href="/users/sign-out">Sign Out</a>
             </li>
