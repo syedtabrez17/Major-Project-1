@@ -46,6 +46,10 @@ main{
                 font-size: x-large;
                 border: none;
                 border-radius: 5px;
+                cursor: pointer;
+            }
+            button:active{
+                box-shadow: 2px 2px 5px 5px rgb(112, 126, 91) inset;
             }
             div{
                 margin-left:5px ;

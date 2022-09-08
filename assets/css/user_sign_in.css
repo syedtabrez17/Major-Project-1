@@ -39,4 +39,5 @@ main {
     color: white;
     font-size: x-large;
     border: none;
-    border-radius: 5px; }
+    border-radius: 5px;
+    cursor: pointer; }

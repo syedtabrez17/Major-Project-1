@@ -39,7 +39,10 @@ main {
       color: white;
       font-size: x-large;
       border: none;
-      border-radius: 5px; }
+      border-radius: 5px;
+      cursor: pointer; }
+    main #sign-up-form div button:active {
+      box-shadow: 2px 2px 5px 5px #707e5b inset; }
     main #sign-up-form div div {
       margin-left: 5px;
       display: flex;
