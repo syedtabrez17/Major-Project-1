@@ -15,10 +15,11 @@ header{
     #header-li{
         list-style: none;
         display: flex;
-        min-width: 18%;
+        width: auto;
         justify-content: space-around;
         li{ color: white;
-            width: 45%;
+            width: auto;
+            margin-right: 10px;
             font-size: 18px;
             a{
                 color: white;

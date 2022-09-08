@@ -13,11 +13,12 @@ header {
   header #header-li {
     list-style: none;
     display: flex;
-    min-width: 18%;
+    width: auto;
     justify-content: space-around; }
     header #header-li li {
       color: white;
-      width: 45%;
+      width: auto;
+      margin-right: 10px;
       font-size: 18px; }
       header #header-li li a {
         color: white;
