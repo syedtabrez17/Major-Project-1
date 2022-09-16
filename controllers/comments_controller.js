@@ -1,50 +1,49 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 
-module.exports.create = function(req, res){
-    Post.findById(req.body.post, function(err, post){
+module.exports.create = async function(req, res){
+
+    try{
+        let post = await Post.findById(req.body.post);
 
         if (post){
-            Comment.create({
+            let comment = await Comment.create({
                 content: req.body.content,
                 post: req.body.post,
                 user: req.user._id
-            }, function(err, comment){
-                // handle error
-                if(err){
-                    console.log('Error in creating comment');
-                    return
-                }
-                // console.log(comment);
-                // console.log('1')
-                post.comment.push(comment);
-                // console.log('2');
-                post.save();
-                // console.log('3')
-
-                res.redirect('/');
             });
+            post.comment.push(comment);
+            post.save();
+
+            res.redirect('/');
         }
 
-    });
+    }catch(err){
+        console.log('Error', err);
+        return;
+    }
+
 }
 
-module.exports.destroy = function(req, res){
-    Comment.findById(req.params.id, function(err,comment){
-        if(err){
-            console.log('Error in finding the comment');
-            return;
-        }
-        if(comment.user = req.user.id){
-          let postId = comment.post;
+module.exports.destroy = async function(req, res){
 
-            comment.remove();
+    try{
+        let comment = await Comment.findById(req.params.id);
 
-          Post.findByIdAndUpdate(postId,{$pull:{comment: req.params.id}}, function(err, post){
+        if(comment.user == req.user.id){
+            let postId = comment.post;
+  
+              comment.remove();
+  
+            let post = await Post.findByIdAndUpdate(postId,{$pull:{comment: req.params.id}});
             return res.redirect('back');
-          })  
-        }else{
-            return res.redirect('back');
-        }
-    });
+          }else{
+              return res.redirect('back');
+          }
+
+    }catch(err){
+        console.log('Error', err);
+        return;
+    }
+        
 }
