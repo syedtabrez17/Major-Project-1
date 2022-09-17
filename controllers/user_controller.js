@@ -13,9 +13,11 @@ module.exports.profile = function(req,res){
 module.exports.update = function(req, res){
     if (req.user.id == req.params.id){
         User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+            req.flash('success', 'Updated Successfully!');
             return res.redirect('back');
         });
     }else{
+        req.flash('error', 'Unauthorized');
         return res.status(401).send('Unauthorized');
     }
 }
@@ -56,15 +58,18 @@ module.exports.create = function(req,res){
         if(!user){
             User.create(req.body, function(err,user){
                 // console.log(user)
-                console.log(req.body)
+                // console.log(req.body)
                 if(err){
                     console.log('Error in creating user while signing up');
                     return
                 }
+                
+                req.flash('success', 'Account created successfully!');
                 return res.redirect('/users/sign-in');
             });
         }
         else{
+            req.flash('error', 'Account already exist!');
             return res.redirect('back');
         }
     });
