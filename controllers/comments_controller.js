@@ -31,11 +31,13 @@ module.exports.destroy = async function(req, res){
         let comment = await Comment.findById(req.params.id);
 
         if(comment.user == req.user.id){
+
             let postId = comment.post;
   
-              comment.remove();
+            comment.remove();
   
-            let post = await Post.findByIdAndUpdate(postId,{$pull:{comment: req.params.id}});
+            let post = await Post.findByIdAndUpdate(postId, {$pull:{comment: req.params.id}});
+
             return res.redirect('back');
           }else{
               return res.redirect('back');
