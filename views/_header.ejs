@@ -2,7 +2,19 @@
     <div>Codeial</div>
     <ul id="header-li">
         <% if(locals.user) {%>
-            <li><i class="fas fa-user"></i> <%=user.name%></li>
+            <li>
+                <!-- <a href="/users/profile/<%=user.id%>">
+                    <%if(locals.user.avatar){%>
+                        <img src="<%= user.avatar %>" alt="<%= user.name %>">
+                    <%}else{%>
+                    <i class="fas fa-user"></i>    
+                    <%}%>
+                </a> -->
+                <a href="/users/profile/<%=user.id%>">
+                    <i class="fas fa-user"></i>   
+                    <%=user.name%>
+                </a>
+            </li>
             <li>
                 <a href="/users/sign-out">Sign Out</a>
             </li>

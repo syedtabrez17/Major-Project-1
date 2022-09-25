@@ -1,10 +1,86 @@
 #home-container {
+  font-family: sans-serif;
   display: flex; }
+  #home-container h3 {
+    text-align: center; }
   #home-container #feed-posts {
     width: 70%;
     padding: 10px; }
+    #home-container #feed-posts #new-post-form {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      margin-left: 50px; }
+      #home-container #feed-posts #new-post-form #post-submit {
+        width: 75px;
+        margin: 5px 1px 5px auto;
+        padding: 3px; }
+    #home-container #feed-posts #posts-list-container {
+      padding: 10px 5px 30px 5px; }
+      #home-container #feed-posts #posts-list-container #posts-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column; }
+        #home-container #feed-posts #posts-list-container #posts-list .post-list {
+          margin-bottom: 1px;
+          border-bottom: 1px dotted lightgray; }
+          #home-container #feed-posts #posts-list-container #posts-list .post-list p {
+            margin: 8px auto 3px 5px;
+            margin-top: 8px;
+            margin-bottom: 3px; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list p .post-user a {
+              color: black;
+              text-decoration: none;
+              font-size: medium; }
+          #home-container #feed-posts #posts-list-container #posts-list .post-list .delete-small {
+            margin-left: 20px;
+            margin-bottom: 2px; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list .delete-small .delete-post-button {
+              color: red;
+              text-decoration: none; }
+          #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .comment-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .comment-form input[type=text] {
+              width: 100%;
+              max-width: 250px;
+              height: 40px; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .comment-form input[type=submit] {
+              width: 100px;
+              margin: 3px 3px 3px 147px; }
+          #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .post-comments-list ul {
+            list-style: none; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .post-comments-list ul li p {
+              margin: 8px auto 3px 5px;
+              margin-top: 8px;
+              margin-bottom: 3px; }
+              #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .post-comments-list ul li p .comment-user a {
+                color: black;
+                text-decoration: none;
+                font-size: small; }
+            #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .post-comments-list ul li .delete-small {
+              margin-left: 20px;
+              margin-bottom: 2px; }
+              #home-container #feed-posts #posts-list-container #posts-list .post-list .post-comment .post-comments-list ul li .delete-small .delete-comment-button {
+                color: red;
+                text-decoration: none; }
   #home-container #user-friends {
     width: 30%;
-    padding: 10px;
     border-left: 1px solid lightgray;
-    min-height: 100vh; }
+    min-height: 100vh;
+    background-color: #a3baf4; }
+    #home-container #user-friends div {
+      border-radius: 5px; }
+      #home-container #user-friends div p:hover {
+        background-color: lightgrey;
+        cursor: pointer; }
+      #home-container #user-friends div p {
+        margin: 0;
+        border: 1px solid #9b9f99;
+        padding: 10px;
+        border-radius: 5px; }
+        #home-container #user-friends div p a {
+          text-decoration: none;
+          color: black;
+          font-size: larger; }

@@ -2,16 +2,16 @@
 
 <div id="home-container">
     <section id="feed-posts">
-        <h4>Posts</h4>
+        <h3>Posts</h3>
         <% if(locals.user){ %>
         <form action="/posts/create" id="new-post-form" method="POST">
             <textarea name="content" id="new-post-content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
-            <input type="submit" value="POST">
+            <input id="post-submit" type="submit" value="POST">
         </form>
         <% } %>
         
         <div id="posts-list-container">
-            <ul>
+            <ul id="posts-list">
                 <% for(post of posts){%>
                 <%- include('_post') -%>    
                 <% } %>
@@ -19,15 +19,19 @@
         </div>
     </section>
     
+    <%if(locals.user){%>
     <section id="user-friends">
-        <h4>Friends</h4>
-        <% for (u of all_users){%>
-        
-            <p>
-                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-            </p>
-        <%}%>
-    </section>
+        <h3>Friends</h3>
+        <div>
+            <% for (u of all_users){%>
+            
+                <p>
+                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                </p>
+            <%}%>
+        </div>
+    </section>    
+    <%}%>
 </div>
 
 <script src="/js/home_posts.js"></script>

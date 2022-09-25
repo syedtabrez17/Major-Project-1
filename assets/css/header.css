@@ -22,4 +22,9 @@ header {
       font-size: 18px; }
       header #header-li li a {
         color: white;
-        text-decoration: none; }
+        text-decoration: none;
+        align-items: center; }
+        header #header-li li a img {
+          width: 20px;
+          border-radius: 50%;
+          padding-top: 2px; }

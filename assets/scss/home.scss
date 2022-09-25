@@ -1,15 +1,132 @@
 #home-container{
+    font-family: sans-serif;
     display: flex;
     // height: auto;
+    h3{
+        text-align: center;
+    }
     #feed-posts{
         width: 70%;
         padding: 10px;
+        // text-align: center;
+        #new-post-form{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            margin-left: 50px;
+            #post-submit{
+                width: 75px;
+                margin: 5px 1px 5px auto;
+                padding: 3px;
+            }
+        }
+        #posts-list-container{
+            padding: 10px 5px 30px 5px;
+            #posts-list{
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                .post-list{
+                    // border: 1px solid black;
+                    margin-bottom: 1px;
+                    border-bottom: 1px dotted lightgray;
+                    p{
+                        margin: 8px auto 3px 5px;
+                        margin-top: 8px;
+                        margin-bottom: 3px;
+                        .post-user{
+                            a{
+                                color: black;
+                                text-decoration: none;
+                                font-size: medium;
+                            }
+                        }
+                    }
+                    .delete-small{
+                        
+                        margin-left: 20px;
+                        margin-bottom: 2px;
+                        .delete-post-button{
+                            color: red;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .post-comment{
+                        .comment-form{
+                            display: flex;
+                            flex-direction: column;
+                            // width: 80%;
+                            margin-bottom: 0;
+                            input[type=text]{
+                                width: 100%;
+                                max-width: 250px;
+                                height: 40px;
+                            }
+                            input[type=submit]{
+                                width: 100px;
+                                // margin: 3px  3px auto;
+                                margin: 3px 3px 3px 147px;
+                            }
+                        }
+                        .post-comments-list{
+                            ul{
+                                list-style: none;
+                                li{
+                                    p{
+                                        margin: 8px auto 3px 5px;
+                                        margin-top: 8px;
+                                        margin-bottom: 3px;
+                                        .comment-user{
+                                            a{
+                                                color: black;
+                                                text-decoration: none;
+                                                font-size: small;
+                                            }
+                                        }
+                                    }
+                                    .delete-small{
+                                        
+                                        margin-left: 20px;
+                                        margin-bottom: 2px;
+                                        .delete-comment-button{
+                                            color: red;
+                                            text-decoration: none;
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     #user-friends{
         width: 30%;
-        padding: 10px;
         border-left: 1px solid lightgray;
         min-height: 100vh;
+        background-color: rgb(163, 186, 244);
+        div{
+            // border-top: 1px solid rgb(58, 56, 56);
+            border-radius: 5px;
+            p:hover{
+                background-color: lightgrey;
+                cursor: pointer;
+                // box-shadow:2px 2px 5px 5px rgb(173, 170, 170) inset;
+            }
+            p{
+                margin: 0;
+                border: 1px solid rgb(155, 159, 153);
+                padding: 10px;
+                border-radius: 5px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-size: larger;
+                }
+            }
+        }
     }
 }

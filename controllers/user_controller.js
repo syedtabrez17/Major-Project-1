@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 
 module.exports.profile = function(req,res){
     User.findById(req.params.id, function(err,user){
@@ -13,23 +14,21 @@ module.exports.profile = function(req,res){
 }
 
 module.exports.update = async function(req, res){
-    // if (req.user.id == req.params.id){
-    //     console.log(req.body)
-    //     User.findByIdAndUpdate(req.params.id, req.body.name, function(err, user){
-    //         req.flash('success', 'Updated Successfully!');
-    //         return res.redirect('back');
-    //     });
-    // }else{
-    //     req.flash('error', 'Unauthorized');
-    //     return res.status(401).send('Unauthorized');
-    // }
     if(req.user.id == req.params.id){
         
         try{
             let user = await User.findById(req.params.id);
             User.uploadedAvatar(req, res, function(err){
-                if(err){
+                if(err instanceof multer.MulterError){
+                    // console.log(err);
+                    // res.send(err)
+                    // req.flash('error', 'Only .png, .jpg and .jpeg format allowed!');
+                    return res.redirect('back');
+                }
+                else if(err){
                     console.log('Multer Error: ', err);
+                    // req.flash('error', 'Only .png, .jpg and .jpeg format allowed!');
+                    return res.redirect('back');
                 }
                 // console.log(req.file);
                 user.name = req.body.name;
@@ -49,7 +48,7 @@ module.exports.update = async function(req, res){
 
         }catch(err){
             req.flash('error', err);
-            return res.redirect('back');;
+            return res.redirect('back');
         }
 
     }else{
