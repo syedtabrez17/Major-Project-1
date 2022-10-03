@@ -21,11 +21,11 @@ const userSchema = new mongoose.Schema({
     },
     dob:{
         type: Date,
-        required:true
+        // required:true
     },
     gender:{
         type: String,
-        required: true
+        // required: true
     },
     avatar: {
         type: String

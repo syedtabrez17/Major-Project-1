@@ -3,7 +3,7 @@
 <h1 id="sign-up-head">Create a new account</h1>
 <form action="/users/create" method="POST" id="sign-up-form">
     <div>
-        <input name="name" type="text" placeholder="Enter your name">
+        <input name="name" type="text" placeholder="Enter your name" required>
     </div>    
     <div>    
         <input name="email" type="text" placeholder="Enter Email" required>
@@ -14,21 +14,26 @@
     </div>    
     <div>    
         <label for="dobb">Date of Birth</label>
-        <input type="date" name="dob" id="dob" required>
+        <input type="date" name="dob" id="dob">
     </div>
     <div>    
         <div>
             <span>Gender : &nbsp;</span>
+            <input type="radio" name="gender" id="male" value="Male">
             <label for="male">Male</label>
-            <input type="radio" name="gender" id="male" value="Male" required>
+            <input type="radio" name="gender" id="female" value="Female" >
             <label for="male">Female</label>
-            <input type="radio" name="gender" id="female" value="Female" required>
+            <input type="radio" name="gender" id="other" value="Other">
             <label for="male">Other</label>
-            <input type="radio" name="gender" id="other" value="Other" required>
         </div>
     </div>
     <div>
         <button type="submit">Sign Up</button>
+    </div>
+    <div>
+        <p>
+            <a href="/users/auth/google">Google Sign In/Sign Up</a>
+        </p>
     </div>
     <span>Have already account? <a href="/users/sign-in">Sign In</a></span>
 </form> 
