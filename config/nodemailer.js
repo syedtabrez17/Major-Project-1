@@ -3,6 +3,8 @@ const ejs = require('ejs');
 const path = require('path');
 
 
+let testAccount = nodemailer.createTestAccount();
+
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
@@ -10,7 +12,7 @@ let transporter = nodemailer.createTransport({
     secure: false,
     auth: {
         user: 'codeial54321',
-        pass: 'codeial123'
+        pass: 'sqtrezewkspenwng'
     }    
 });
 
